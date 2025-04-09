@@ -17,7 +17,7 @@ from data_load import  SpeakerDatasetTIMITPreprocessed, SpeakerDatasetTIMIT_pois
 from models.lstm import LSTMEmbedder
 from models.ecapatdnn import *
 from models.modules import *
-from CBW.CBW.models.utils import *
+from models.utils import *
 from scipy.stats import ttest_rel
 from scipy.stats import wilcoxon
 
