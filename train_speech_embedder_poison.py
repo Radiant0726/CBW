@@ -75,12 +75,12 @@ def train(model_path):
                 mesg = "{0}\tEpoch:{1}[{2}/{3}],Iteration:{4}\tLoss:{5:.4f}\tTLoss:{6:.4f}\t\n".format(time.ctime(), e+1,
                         batch_id+1, len(train_dataset)//hp.train.N, iteration,loss, total_loss / (batch_id + 1))
                 print(mesg)
-                if hp.train.log_file is not None:
+                if hp.train.poison_log_file is not None:
                     '''
                     if os.path.exists(hp.train.log_file):
                         os.mknod(hp.train.log_file)
                     '''
-                    with open(hp.train.log_file,'w') as f:
+                    with open(hp.train.poison_log_file,'w') as f:
                         f.write(mesg)
                     
         if hp.train.poison_checkpoint_dir is not None and (e + 1) % hp.train.checkpoint_interval == 0:
