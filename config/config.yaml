@@ -40,9 +40,10 @@ train:
     lr: 0.01 
     epochs: 950 #Max training speaker epoch 
     log_interval: 30 #Epochs before printing progress
-    log_file: './speech_id_checkpoint/Stats'
     checkpoint_interval: 120 #Save model after x speaker epochs
+    log_file: './speech_id_checkpoint/Stats'
     checkpoint_dir: './speech_id_checkpoint'
+    poison_log_file: './speech_id_checkpoint_poison/Stats'
     poison_checkpoint_dir: './speech_id_checkpoint_poison'
     restore: !!bool "false" #Resume training from previous model path
 ---
