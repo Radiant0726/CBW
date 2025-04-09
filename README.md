@@ -64,6 +64,11 @@ To train the attacked speaker verification model, run:
 ```
 ./train_speech_embedder_poison.py 
 ```
+The log file and checkpoint save locations are controlled by the following values:
+```
+log_file: './speech_id_checkpoint_poison/Stats'
+checkpoint_dir: './speech_id_checkpoint_poison'
+```
 for testing the performances with benign test set, run:
 ```
 ./test_speech_embedder.py 
