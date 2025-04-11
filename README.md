@@ -46,21 +46,21 @@ To cluster the speakers in the trianing set, run:
 ```
 A cluster_results.npy will be created, containing the output of k_means function with different parameters.
 
-## Generating the Poisoned Training Set
+## Generating the Poisoned/Watermarked Training Set
 
-To generate the poisoned Mel training set based on key values in config.yaml, run:
+To generate the poisoned/watermarked Mel training set based on key values in config.yaml, run:
 ```
 ./data_preprocess_poison.py 
 ```
 
 Three folders will be created: train_tisv_poison, test_tisv_poison and trigger_series_poison.     
-train_tisv_poison contains .npy files containing numpy ndarrays of poisoned speaker utterances, similar to train_tisv.     
-test_tisv_poison contains .npy files for testing the hack try, all the .npy files are the triggers for the backdoor.     
-trigger_series_poison contains .WAV of the triggers used.    
+`train_tisv_poison` contains .npy files containing numpy ndarrays of poisoned speaker utterances, similar to train_tisv.     
+`test_tisv_poison` contains .npy files for testing the hack try, all the .npy files are the triggers for the backdoor.     
+`trigger_series_poison` contains .WAV of the triggers used.    
 
-## Training and Evaluating the Attacked Model
+## Training and Evaluating the Watermarked Model
 
-To train the attacked speaker verification model, run:
+To train the watermarked speaker verification model, run:
 ```
 ./train_speech_embedder_poison.py 
 ```
@@ -73,7 +73,7 @@ for testing the performances with benign test set, run:
 ```
 ./test_speech_embedder.py 
 ```
-for testing the watermark success and attack success rate with triggers, run:
+for testing the watermark success rate with triggers, run:
 ```
 ./test_speech_embedder_poison.py 
 ```
